@@ -1,3 +1,11 @@
+### My Solution
+
+After a look into the opponents I found that Abbey was the one to beat, and implemented a Markov chain of length 2. I first implemented my own with the same length, but found it only consitently beat two of the four opponents.
+
+My fix for this was to add code for a Markov chain of any length, so that I could find the optimum length value, and found that with a length of 5 it satisfied the brief of a 60% win rate.
+
+Please find the initial project requirements below...
+
 ### Assignment
 
 For this challenge, you will create a program to play Rock, Paper, Scissors. A program that picks at random will usually win 50% of the time. To pass this challenge your program must play matches against four different bots, winning at least 60% of the games in each match.

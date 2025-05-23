@@ -3,8 +3,8 @@ import numpy as np
 
 MARKOV_CHAIN_LENGTH = 5
 
-counter_moves = ['P', 'R', 'S']
-move_index_map = {'R': 0, 'S': 1, 'P': 2}
+COUNTER_MOVES = ['P', 'R', 'S']
+MOVE_INDEX_MAP = {'R': 0, 'S': 1, 'P': 2}
 
 def get_next_move_prediction(transition_tally, recent_plays):
     if len(recent_plays) != MARKOV_CHAIN_LENGTH - 1:
@@ -39,7 +39,7 @@ def player(
         transition_tally += np.zeros([3] * MARKOV_CHAIN_LENGTH).tolist()
 
     if prev_play:
-        opponent_history.append(move_index_map[prev_play])
+        opponent_history.append(MOVE_INDEX_MAP[prev_play])
 
     if (len(opponent_history) < MARKOV_CHAIN_LENGTH) or not prev_play:
         return 'P'
@@ -49,4 +49,4 @@ def player(
     increment_transition_tally(transition_tally, recent_plays)
     prediction = get_next_move_prediction(transition_tally, recent_plays[1:])
 
-    return counter_moves[prediction]
+    return COUNTER_MOVES[prediction]
